@@ -25,3 +25,7 @@
 #dashboard-player {
 	border: 3px solid black;
 }
+
+#player {
+    background-color: teal;
+}

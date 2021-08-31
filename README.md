@@ -3,21 +3,21 @@
 ## Getting Started
 
 - Frontend: "npm start"
-- Backend: CD into "server" folder, "npm run devStart"
+- Backend: CD into "server" folder, "npm run server"
 
 ## Tool & Technologies
 
-- Spotify for Developers
+- [Spotify for Developers](https://developer.spotify.com/)
 - [Bootstrap](https://getbootstrap.com/)
 - [React Bootstrap](https://react-bootstrap.github.io/)
 - [Spotify Web Api Node](https://github.com/thelinmichael/spotify-web-api-node)
-- Express
-- Nodemon
-- Axios
-- CORS
-- Body parser
-- React Spotify web playback
-- Lyrics finder
+- [Express](https://expressjs.com/)
+- [Nodemon](https://nodemon.io/)
+- [Axios](https://axios-http.com/)
+- [Cors](https://www.npmjs.com/package/cors)
+- [Body parser](https://www.npmjs.com/package/body-parser)
+- [React Spotify web playback](https://www.npmjs.com/package/react-spotify-web-playback)
+- [Lyrics finder](https://www.npmjs.com/package/lyrics-finder)
 
 ## Credits
 

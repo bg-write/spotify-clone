@@ -1,4 +1,4 @@
-# Spotify Clone
+# Spotify Clone (w/ Lyrics!)
 
 ## Getting Started
 
@@ -12,6 +12,7 @@
 - [React Bootstrap](https://react-bootstrap.github.io/)
 - [Spotify Web Api Node](https://github.com/thelinmichael/spotify-web-api-node)
 - Express
+- Nodemon
 - Axios
 - CORS
 - Body parser

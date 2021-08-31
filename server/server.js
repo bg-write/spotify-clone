@@ -10,6 +10,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// TO-DO: UPDATE .CATCH, HERE AND EVERYWHERE ELSE
 app.post('/refresh', (req, res) => {
 	const refreshToken = req.body.refreshToken;
 	const spotifyApi = new SpotifyWebApi({
@@ -57,7 +58,7 @@ app.post('/login', (req, res) => {
 app.get('/lyrics', async (req, res) => {
 	const lyrics =
 		(await lyricsFinder(req.query.artist, req.query.track)) ||
-		'No Lyrics Found';
+		'No Lyrics Found, Sad!';
 	res.json({ lyrics });
 });
 

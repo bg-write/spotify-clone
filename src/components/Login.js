@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 
 // For a full list of Spotify data query parameters and values for our authorization URI ("Construct the authorization URI"): https://developer.spotify.com/documentation/general/guides/authorization-guide/
 
-// Make sure REDIRECT_URI matches what's on your Developer Dashboard ("Dashboard" -> "Edit Settings" -> "Redirect URIs"): https://developer.spotify.com/
+// Make sure REDIRECT_URI matches what's on your Developer Dashboard ("Dashboard" -> "Edit Settings" -> "Redirect URIs") and ENV: https://developer.spotify.com/
 
 const GET = 'https://accounts.spotify.com/authorize';
 const CLIENT_ID = '5082ad4ebe774438b665e8d896ba35bd';

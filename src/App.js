@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 

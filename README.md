@@ -1,6 +1,6 @@
 # Spotify Clone (w/ Lyrics!)
 
-A minimalist Spotify clone (with a lyric generator) using React, Bootstrap, Express, Axios, and more. (Currently in development.)
+A minimalist Spotify clone including a lyric generator. Built with React, Bootstrap, Express, Axios, and more. (Currently in development.)
 
 ## Getting Started
 

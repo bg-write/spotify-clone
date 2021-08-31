@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import spotifyIconBlack from '../assets/Spotify_Icon_RGB_Black.png';
 
 // For a full list of Spotify data query parameters and values for our authorization URI ("Construct the authorization URI"): https://developer.spotify.com/documentation/general/guides/authorization-guide/
 
@@ -15,22 +16,19 @@ const SCOPE =
 const AUTH_URL = `${GET}?client_id=${CLIENT_ID}&response_type=${RESPONSE_TYPE}&redirect_uri=${REDIRECT_URI}&scope=${SCOPE}`;
 
 export default function Login() {
-	// TO-DO: ADD SPINNING SPOTIFY LOGO TO HOVER OVER LOGIN BUTTON, LIKE BIG D'OH DONUT.
 	return (
 		<>
 			<Container
 				id="login-container"
 				className="d-flex flex-column justify-content-center align-items-center"
 			>
-				<div id="donut-container" className="m-1">
-					<img
-						id="donut"
-						className="donut loader"
-						alt="donut"
-						src="https://i.imgur.com/ske1xNn.png"
-						loading="lazy"
-					/>
-				</div>
+				<img
+					id="login-logo"
+					className="loader m-1"
+					alt="spotify logo"
+					src={spotifyIconBlack}
+					loading="lazy"
+				/>
 				<a
 					id="login-button"
 					className="btn btn-success btn-lg m-1"

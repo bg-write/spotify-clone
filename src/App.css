@@ -17,7 +17,7 @@ body {
 	min-height: 100vh;
 }
 
-.donut {
+#login-logo {
 	margin: 0.5rem;
 }
 
@@ -38,10 +38,11 @@ body {
 }
 
 #login-button {
-	border: 3px solid var(--spotify-black);
 	color: var(--spotify-white);
-	background-color: var(--spotify-green);
+	background-color: var(--spotify-black);
 }
+
+/* TO-DO: ADD OVERALL HOVER EFFECT TO SPOTIFY GREEN */
 
 /* WHEN LOGGED IN */
 #dashboard-container {

@@ -2,20 +2,20 @@
 
 ## Getting Started
 
-- frontend: "npm start"
-- backend: CD into "server" folder, "npm run DevStart"
+- Frontend: "npm start"
+- Backend: CD into "server" folder, "npm run devStart"
 
 ## Tool & Technologies
 
 - Spotify for Developers
 - Bootstrap
 - React Bootstrap
-- [Spotify-Web-Api-Node](https://github.com/thelinmichael/spotify-web-api-node)
+- [Spotify Web Api Node](https://github.com/thelinmichael/spotify-web-api-node)
 - Express
 - Axios
 - CORS
 - Body parser
-- React Spotify Web playback
+- React Spotify web playback
 - Lyrics finder
 
 ## Credits

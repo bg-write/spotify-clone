@@ -1,4 +1,27 @@
 #login-container {
-    background-color: blue;
-    min-height: 100vh;
+	background-color: blue;
+	min-height: 100vh;
+}
+
+#dashboard-container {
+	background-color: red;
+	height: 100vh;
+}
+
+#dashboard-form {
+	background-color: grey;
+}
+
+#dashboard-results {
+	background-color: green;
+	overflow-y: auto;
+}
+
+#dashboard-lyrics {
+	background-color: yellow;
+	white-space: pre;
+}
+
+#dashboard-player {
+	border: 3px solid black;
 }

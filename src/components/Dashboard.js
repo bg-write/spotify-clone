@@ -75,18 +75,17 @@ export default function Dashboard({ code }) {
 	}, [search, accessToken]);
 
 	return (
+		// TO-DO: When no song is selected and you press play, update error message from "no list was loaded"
 		<>
-			<Container
-				className="d-flex flex-column py-2"
-				style={{ height: '100vh', backgroundColor: 'teal' }}
-			>
+			<Container id="dashboard-container" className="d-flex flex-column py-2">
 				<Form.Control
+					id="dashboard-form"
 					type="search"
 					placeholder="Search Songs & Artists"
 					value={search}
 					onChange={(e) => setSearch(e.target.value)}
 				/>
-				<div className="flex-grow-1 my-2" style={{ overflowY: 'auto' }}>
+				<div id="dashboard-results" className="flex-grow-1 my-2">
 					{searchResults.map((track) => (
 						<TrackSearchResult
 							track={track}
@@ -95,13 +94,17 @@ export default function Dashboard({ code }) {
 						/>
 					))}
 					{searchResults.length === 0 && (
-						<div className="text-center" style={{ whiteSpace: 'pre' }}>
+						<div id="dashboard-lyrics" className="text-center">
 							{lyrics}
 						</div>
 					)}
 				</div>
-				<div>
-					<Player accessToken={accessToken} trackUri={playingTrack?.uri} />
+				<div id="dashboard-player">
+					<Player
+						id="dashboard-player"
+						accessToken={accessToken}
+						trackUri={playingTrack?.uri}
+					/>
 				</div>
 			</Container>
 		</>

@@ -1,31 +1,73 @@
+/* OFFICIAL SPOTIFY STYLE GUIDE: https://developer.spotify.com/documentation/general/design-and-branding/#using-our-logo */
+
+:root {
+	--spotify-green: #1db954;
+	--spotify-white: #ffffff;
+	--spotify-black: #191414;
+}
+
+body {
+	background-image: url('https://media.giphy.com/media/KZFrf9JusXzmpnPsT6/giphy.gif');
+	font-family: sans-serif, Helvetica Neue, Helvetica, Arial;
+}
+
+/* WHEN LOGGED OUT */
 #login-container {
-	background-color: blue;
+	background-color: salmon;
 	min-height: 100vh;
 }
 
+.donut {
+	margin: 0.5rem;
+}
+
+.loader {
+	width: 8rem;
+	height: 8rem;
+	border-radius: 50%;
+	animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+#login-button {
+	border: 3px solid var(--spotify-black);
+	color: var(--spotify-white);
+	background-color: var(--spotify-green);
+}
+
+/* WHEN LOGGED IN */
 #dashboard-container {
-	background-color: red;
+	background-color: salmon;
 	height: 100vh;
 }
 
+#dashboard-header {
+	background-color: salmon;
+}
+
 #dashboard-form {
-	background-color: grey;
+	background-color: var(--spotify-white);
 }
 
 #dashboard-results {
-	background-color: green;
+	background-color: salmon;
 	overflow-y: auto;
+	/* TO-DO: update font and color of title and artist */
 }
 
 #dashboard-lyrics {
-	background-color: yellow;
+	border: 3px solid var(--spotify-black);
 	white-space: pre;
 }
 
 #dashboard-player {
-	border: 3px solid black;
-}
-
-#player {
-    background-color: teal;
+	border: 3px solid var(--spotify-black);
 }

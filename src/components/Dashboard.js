@@ -78,6 +78,7 @@ export default function Dashboard({ code }) {
 		// TO-DO: When no song is selected and you press play, update error message from "no list was loaded"
 		<>
 			<Container id="dashboard-container" className="d-flex flex-column py-2">
+				<div id="dashboard-header">HELLO</div>
 				<Form.Control
 					id="dashboard-form"
 					type="search"
@@ -100,11 +101,7 @@ export default function Dashboard({ code }) {
 					)}
 				</div>
 				<div id="dashboard-player">
-					<Player
-						id="dashboard-player"
-						accessToken={accessToken}
-						trackUri={playingTrack?.uri}
-					/>
+					<Player accessToken={accessToken} trackUri={playingTrack?.uri} />
 				</div>
 			</Container>
 		</>

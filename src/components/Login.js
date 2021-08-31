@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 
 // For a full list of Spotify data query parameters and values for our authorization URI ("Construct the authorization URI"): https://developer.spotify.com/documentation/general/guides/authorization-guide/
 
-// Make sure REDIRECT_URI matches what's on your Developer Dashboard ("Dashboard" -> "Edit Settings" -> "Redirect URIs") and ENV: https://developer.spotify.com/
+// Make sure REDIRECT_URI matches what's on your Developer Dashboard ("Dashboard" -> "Edit Settings" -> "Redirect URIs") and env: https://developer.spotify.com/
 
 const GET = 'https://accounts.spotify.com/authorize';
 const CLIENT_ID = '5082ad4ebe774438b665e8d896ba35bd';
@@ -22,12 +22,15 @@ export default function Login() {
 				id="login-container"
 				className="d-flex flex-column justify-content-center align-items-center"
 			>
-				<img
-					id="login-img"
-					className="m-1"
-					src="https://picsum.photos/200/300"
-					alt="placeholder"
-				></img>
+				<div id="donut-container" className="m-1">
+					<img
+						id="donut"
+						className="donut loader"
+						alt="donut"
+						src="https://i.imgur.com/ske1xNn.png"
+						loading="lazy"
+					/>
+				</div>
 				<a
 					id="login-button"
 					className="btn btn-success btn-lg m-1"

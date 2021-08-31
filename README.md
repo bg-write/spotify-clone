@@ -1,5 +1,7 @@
 # Spotify Clone (w/ Lyrics!)
 
+A minimalist Spotify clone (with a lyric generator) using React, Bootstrap, Express, Axios, and more. (Currently in development.)
+
 ## Getting Started
 
 - Frontend: "npm start"
@@ -19,6 +21,9 @@
 - [React Spotify web playback](https://www.npmjs.com/package/react-spotify-web-playback)
 - [Lyrics finder](https://www.npmjs.com/package/lyrics-finder)
 
+## To Add (Icebox)
+
+- Be able to play full albums instead of just one song at a time.
 ## Credits
 
-- Thank you to [Web Dev Simplified](https://www.youtube.com/watch?v=Xcet6msf3eE) for sharing an intro video on how to start with Spotify's web API.
+- Thank you to [Web Dev Simplified](https://www.youtube.com/watch?v=Xcet6msf3eE) for sharing an intro video on how to start with Spotify's API.

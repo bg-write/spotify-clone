@@ -7,7 +7,7 @@ export default function Player({ accessToken, trackUri }) {
 	useEffect(() => setPlay(true), [trackUri]);
 
 	if (!accessToken) return null;
-	// For further styling of the player: https://github.com/gilbarbara/react-spotify-web-playback/blob/HEAD/src/types/common.ts#L44
+	// For further styling of the player: https://www.npmjs.com/package/react-spotify-web-playback & https://github.com/gilbarbara/react-spotify-web-playback/blob/HEAD/src/types/common.ts#L44
 	return (
 		<>
 			<div id="player">
@@ -20,22 +20,20 @@ export default function Player({ accessToken, trackUri }) {
 					play={play}
 					uris={trackUri ? [trackUri] : []}
 					magnifySliderOnHover
-					name={"BG's Spotify Clone Web Player"}
+					name={"Spotify Clone Player"}
 					styles={{
-						activeColor: 'fff',
-						bgColor: '#333',
-						color: '#fff',
-						// height: number | string,
-						loaderColor: '#fff',
-						// loaderSize: number | string,
+						// The track heart
+						activeColor: '#1cb954',
+						// The player
+						bgColor: 'salmon',
+						// Affects the rewind, pause/play, forward, speaker, and volume icons
+						color: 'black',
+						// The bar that shows where we're at in the track
 						sliderColor: '#1cb954',
-						// 						sliderHandleBorderRadius: number | string,
-						//   sliderHandleColor: string,
-						//   sliderHeight: number,
-						//   sliderTrackBorderRadius: number | string,
-						//   sliderTrackColor: string,
-						trackArtistColor: '#ccc',
-						trackNameColor: '#fff',
+						// Artist font
+						trackArtistColor: 'black',
+						// Track font
+						trackNameColor: 'black',
 					}}
 				/>
 			</div>

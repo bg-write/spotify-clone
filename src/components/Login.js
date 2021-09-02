@@ -24,7 +24,7 @@ export default function Login() {
 			>
 				<img
 					id="login-logo"
-					className="loader m-1"
+					className="m-1"
 					alt="spotify logo"
 					src={spotifyIconBlack}
 					loading="lazy"

@@ -5,6 +5,7 @@ import TrackSearchResult from './TrackSearchResult';
 import { Container, Form } from 'react-bootstrap';
 import SpotifyWebApi from 'spotify-web-api-node';
 import axios from 'axios';
+import spotifyIconBlack from '../assets/Spotify_Icon_RGB_Black.png';
 
 const CLIENT_ID = '5082ad4ebe774438b665e8d896ba35bd';
 const spotifyApi = new SpotifyWebApi({
@@ -78,7 +79,15 @@ export default function Dashboard({ code }) {
 		// TO-DO: When no song is selected and you press play, update error message from "no list was loaded"
 		<>
 			<Container id="dashboard-container" className="d-flex flex-column py-2">
-				<div id="dashboard-header">HELLO</div>
+				<div id="dashboard-header">
+					<img
+						id="dashboard-logo"
+						className="m-3"
+						alt="spotify logo"
+						src={spotifyIconBlack}
+						loading="lazy"
+					/>
+				</div>
 				<Form.Control
 					id="dashboard-form"
 					type="search"

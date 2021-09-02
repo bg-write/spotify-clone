@@ -6,6 +6,7 @@ const lyricsFinder = require('lyrics-finder');
 const SpotifyWebApi = require('spotify-web-api-node');
 
 const app = express();
+const path = require('path');
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -62,5 +63,15 @@ app.get('/lyrics', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 3001;
-app.listen(PORT);
-console.log(`Express is listening on port ${PORT}`);
+
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static('build'));
+	app.get('*', (req, res) => {
+		res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+	});
+}
+
+app.listen(PORT, (err) => {
+	if (err) return console.log(err);
+	console.log(`Express is listening on port ${PORT}`);
+});

@@ -25,7 +25,7 @@ body {
 	width: 8rem;
 	height: 8rem;
 	border-radius: 50%;
-	animation: spin 2s linear infinite;
+	animation: spin 4s linear infinite;
 }
 
 @keyframes spin {

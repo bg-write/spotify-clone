@@ -1,8 +1,5 @@
 /* OFFICIAL SPOTIFY STYLE GUIDE: https://developer.spotify.com/documentation/general/design-and-branding/#using-our-logo */
 
-/* TO-DO: ADD OVERALL HOVER EFFECT TO SPOTIFY GREEN */
-/* TO-DO: update font and color of title and artist */
-
 :root {
 	--spotify-green: #1db954;
 	--spotify-white: #ffffff;
@@ -36,9 +33,17 @@ body {
 	}
 }
 
+#login-logo:hover {
+	background-color: var(--spotify-green);
+}
+
 #login-button {
 	color: var(--spotify-white);
 	background-color: var(--spotify-black);
+}
+
+#login-button:hover {
+	background-color: var(--spotify-green);
 }
 
 /* WHEN LOGGED IN */
@@ -58,6 +63,10 @@ body {
 	animation: spin 4s linear infinite;
 }
 
+#dashboard-logo:hover {
+	background-color: var(--spotify-green);
+}
+
 #dashboard-form {
 	background-color: var(--spotify-white);
 }
@@ -65,6 +74,10 @@ body {
 #dashboard-results {
 	background-color: salmon;
 	overflow-y: auto;
+}
+
+#track-search-result:hover {
+	background-color: var(--spotify-green);
 }
 
 #dashboard-lyrics {

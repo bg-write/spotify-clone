@@ -55,7 +55,6 @@ app.post('/login', (req, res) => {
 		});
 });
 
-// TO-DO: While the app looks for lyrics and in the time before it comes up with "no lyrics found", add some type of "Loading ..." text or animation
 app.get('/lyrics', async (req, res) => {
 	const lyrics =
 		(await lyricsFinder(req.query.artist, req.query.track)) ||
@@ -63,6 +62,6 @@ app.get('/lyrics', async (req, res) => {
 	res.json({ lyrics });
 });
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT);
 console.log(`Server listening on port ${PORT}`);

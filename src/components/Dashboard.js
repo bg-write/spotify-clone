@@ -11,6 +11,7 @@ const CLIENT_ID = '5082ad4ebe774438b665e8d896ba35bd';
 const spotifyApi = new SpotifyWebApi({
 	clientId: CLIENT_ID,
 });
+const PORT = 'http://localhost:5000';
 
 export default function Dashboard({ code }) {
 	const accessToken = useAuth(code);
@@ -29,7 +30,7 @@ export default function Dashboard({ code }) {
 		if (!playingTrack) return;
 
 		axios
-			.get('http://localhost:3001/lyrics', {
+			.get(`${PORT}/lyrics`, {
 				params: {
 					track: playingTrack.title,
 					artist: playingTrack.artist,

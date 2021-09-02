@@ -1,6 +1,6 @@
 # Spotify Clone (w/ Lyrics!)
 
-A minimalist Spotify clone including a lyric generator. Built with React, Bootstrap, Express, Axios, and more. (Currently in development.)
+A minimalist Spotify clone including a lyric generator. Built with React, Bootstrap, Express, Axios, and more.
 
 ## Getting Started
 
@@ -24,6 +24,12 @@ A minimalist Spotify clone including a lyric generator. Built with React, Bootst
 ## To Add (Icebox)
 
 - Be able to play full albums instead of just one song at a time.
+- When no song is selected and you press play, customize error message (currently rendering "Cannot perform operation; no list was loaded").
+- When you select a song that has no lyrics, return "No Lyrics Found, Sad!" even before you press play.
+- Simplify Player styling and add more responsive features.
+- Redirect Dashboard logo to return to Login page.
+- Explore other Spotify API information to render to the screen, or other APIs to pull information including linear notes, song credits, YouTube link, and other articles.
+
 ## Credits
 
 - Thank you to [Web Dev Simplified](https://www.youtube.com/watch?v=Xcet6msf3eE) for sharing an intro video on how to start with Spotify's API.

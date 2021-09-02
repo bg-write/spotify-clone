@@ -76,7 +76,6 @@ export default function Dashboard({ code }) {
 	}, [search, accessToken]);
 
 	return (
-		// TO-DO: When no song is selected and you press play, update error message from "no list was loaded"
 		<>
 			<Container id="dashboard-container" className="d-flex flex-column py-2">
 				<div id="dashboard-header">

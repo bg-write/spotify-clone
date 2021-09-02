@@ -29,6 +29,7 @@ A minimalist Spotify clone including a lyric generator. Built with React, Bootst
 - Simplify Player styling and add more responsive features.
 - Redirect Dashboard logo to return to Login page.
 - Explore other Spotify API information to render to the screen, or other APIs to pull information including linear notes, song credits, YouTube link, and other articles.
+- Update and flesh out my error catches.
 
 ## Credits
 

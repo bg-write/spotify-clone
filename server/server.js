@@ -10,7 +10,6 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// TO-DO: UPDATE .CATCH, HERE AND EVERYWHERE ELSE
 app.post('/refresh', (req, res) => {
 	const refreshToken = req.body.refreshToken;
 	const spotifyApi = new SpotifyWebApi({
@@ -64,4 +63,4 @@ app.get('/lyrics', async (req, res) => {
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT);
-console.log(`Server listening on port ${PORT}`);
+console.log(`Express is listening on port ${PORT}`);

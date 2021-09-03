@@ -1,13 +1,13 @@
 # Spotify Clone (w/ Lyrics!)
 
-A minimalist Spotify clone including a lyric generator. Built with React, Bootstrap, Express, Axios, and more.
+A minimalist Spotify clone that includes a lyric generator. Built with React, Bootstrap, Express, Axios, and more.
 
 ## Getting Started
 
 - Frontend: "npm start"
 - Backend: CD into "server" folder, "npm run server"
 
-## Tool & Technologies
+## Tool, Technologies & NPM Packages
 
 - [Spotify for Developers](https://developer.spotify.com/)
 - [Bootstrap](https://getbootstrap.com/)
@@ -28,9 +28,9 @@ A minimalist Spotify clone including a lyric generator. Built with React, Bootst
 - When you select a song that has no lyrics, return "No Lyrics Found, Sad!" even before you press play.
 - Simplify Player styling and add more responsive features.
 - Redirect Dashboard logo to return to Login page.
-- Explore other Spotify API information to render to the screen, or other APIs to pull information including linear notes, song credits, YouTube link, and other articles.
-- Update and flesh out my error catches.
+- Continue exploring the Spotify API to render more song information to the screen, or look into other APIs to pull info including linear notes, song credits, YouTube link, and other articles.
+- Update and flesh out all error catches.
 
 ## Credits
 
-- Thank you to [Web Dev Simplified](https://www.youtube.com/watch?v=Xcet6msf3eE) for sharing an intro video on how to start with Spotify's API.
+- Thank you, [Web Dev Simplified](https://www.youtube.com/watch?v=Xcet6msf3eE), for your intro video on where to start with Spotify's API.

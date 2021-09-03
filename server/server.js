@@ -64,6 +64,10 @@ app.get('/lyrics', async (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 
+app.get('/*', function (req, res) {
+	res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 app.listen(PORT, (err) => {
 	if (err) return console.log(err);
 	console.log(`Express is listening on port ${PORT}`);

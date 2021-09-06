@@ -1,16 +1,19 @@
 # Spotify Clone (w/ Lyrics!)
 
 A minimalist Spotify clone that includes a lyric generator. Built with React, Bootstrap, Express, Axios, and more.
+
 ## Getting Started
 
 - [Heroku deployed link](https://git.heroku.com/bg-spotify-clone-with-lyrics.git) (running into 405; make sure Login and SFD are consistent)
 - Frontend: "npm start"
 - Backend: CD into "server" folder, "npm run server"
+
 ## Tool, Technologies & NPM Packages
 
 - [Spotify for Developers](https://developer.spotify.com/)
 - [Bootstrap](https://getbootstrap.com/)
 - [React Bootstrap](https://react-bootstrap.github.io/)
+- [Styled Components](https://styled-components.com/docs)
 - [Spotify Web Api Node](https://github.com/thelinmichael/spotify-web-api-node)
 - [Express](https://expressjs.com/)
 - [Nodemon](https://nodemon.io/)
@@ -29,6 +32,7 @@ A minimalist Spotify clone that includes a lyric generator. Built with React, Bo
 - Redirect Dashboard logo to return to Login page.
 - Continue exploring the Spotify API to render more song information to the screen, or look into other APIs to pull info including linear notes, song credits, YouTube link, and other articles.
 - Update and flesh out all error catches.
+- Fix Styled Components error with Dashboard page (won't play nice with Player styling).
 
 ## Credits
 

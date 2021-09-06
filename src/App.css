@@ -6,11 +6,6 @@
 	--spotify-black: #191414;
 }
 
-body {
-	background-image: url('https://media.giphy.com/media/KZFrf9JusXzmpnPsT6/giphy.gif');
-	font-family: sans-serif, Helvetica Neue, Helvetica, Arial;
-}
-
 /* WHEN LOGGED OUT */
 #login-container {
 	background-color: salmon;

@@ -6,6 +6,7 @@ import { Container, Form } from 'react-bootstrap';
 import SpotifyWebApi from 'spotify-web-api-node';
 import axios from 'axios';
 import spotifyIconBlack from '../assets/Spotify_Icon_RGB_Black.png';
+import styled from 'styled-components';
 
 const CLIENT_ID = '5082ad4ebe774438b665e8d896ba35bd';
 const spotifyApi = new SpotifyWebApi({
@@ -76,43 +77,80 @@ export default function Dashboard({ code }) {
 		return () => (cancel = true);
 	}, [search, accessToken]);
 
+	const StyledDashboard = styled.div`
+		#dashboard-container {
+			background-color: salmon;
+			height: 100vh;
+		}
+		#dashboard-header {
+			background-color: salmon;
+		}
+		#dashboard-logo {
+			width: 6rem;
+			height: 6rem;
+			border-radius: 50%;
+			animation: spin 4s linear infinite;
+		}
+		#dashboard-logo:hover {
+			background-color: var(--spotify-green);
+		}
+		#dashboard-form {
+			background-color: var(--spotify-white);
+		}
+		#dashboard-results {
+			background-color: salmon;
+			overflow-y: auto;
+		}
+		#track-search-result:hover {
+			background-color: var(--spotify-green);
+		}
+		#dashboard-lyrics {
+			white-space: pre;
+		}
+		#dashboard-player {
+			border: 3px solid var(--spotify-black);
+		}
+	`;
+
 	return (
 		<>
-			<Container id="dashboard-container" className="d-flex flex-column py-2">
-				<div id="dashboard-header">
-					<img
-						id="dashboard-logo"
-						className="m-3"
-						alt="spotify logo"
-						src={spotifyIconBlack}
-						loading="lazy"
-					/>
-				</div>
-				<Form.Control
-					id="dashboard-form"
-					type="search"
-					placeholder="Search Songs & Artists"
-					value={search}
-					onChange={(e) => setSearch(e.target.value)}
-				/>
-				<div id="dashboard-results" className="flex-grow-1 my-2">
-					{searchResults.map((track) => (
-						<TrackSearchResult
-							track={track}
-							key={track.uri}
-							chooseTrack={chooseTrack}
+			<StyledDashboard>
+				<Container id="dashboard-container" className="d-flex flex-column py-2">
+					<div id="dashboard-header">
+						<img
+							id="dashboard-logo"
+							className="m-3"
+							alt="spotify logo"
+							src={spotifyIconBlack}
+							loading="lazy"
 						/>
-					))}
-					{searchResults.length === 0 && (
-						<div id="dashboard-lyrics" className="text-center">
-							{lyrics}
-						</div>
-					)}
-				</div>
-				<div id="dashboard-player">
-					<Player accessToken={accessToken} trackUri={playingTrack?.uri} />
-				</div>
-			</Container>
+					</div>
+					<Form.Control
+						id="dashboard-form"
+						type="search"
+						placeholder="Search Songs & Artists"
+						value={search}
+						onChange={(e) => setSearch(e.target.value)}
+					/>
+					<div id="dashboard-results" className="flex-grow-1 my-2">
+						{searchResults.map((track) => (
+							<TrackSearchResult
+								track={track}
+								key={track.uri}
+								chooseTrack={chooseTrack}
+							/>
+						))}
+						{searchResults.length === 0 && (
+							<div id="dashboard-lyrics" className="text-center">
+								{lyrics}
+							</div>
+						)}
+					</div>
+					<div id="dashboard-player">
+						<Player accessToken={accessToken} trackUri={playingTrack?.uri} />
+					</div>
+				</Container>
+			</StyledDashboard>
 		</>
 	);
 }

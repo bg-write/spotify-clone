@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import spotifyIconBlack from '../assets/Spotify_Icon_RGB_Black.png';
+import styled from 'styled-components';
 
 // For a full list of Spotify data query parameters and values for our authorization URI ("Construct the authorization URI"): https://developer.spotify.com/documentation/general/guides/authorization-guide/
 
@@ -15,28 +16,61 @@ const SCOPE =
 
 const AUTH_URL = `${GET}?client_id=${CLIENT_ID}&response_type=${RESPONSE_TYPE}&redirect_uri=${REDIRECT_URI}&scope=${SCOPE}`;
 
+const StyledLogin = styled.div`
+	#login-container {
+		background-color: salmon;
+		min-height: 100vh;
+	}
+	#login-logo {
+		width: 8rem;
+		height: 8rem;
+		border-radius: 50%;
+		animation: spin 4s linear infinite;
+	}
+	@keyframes spin {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+	#login-logo:hover {
+		background-color: var(--spotify-green);
+	}
+	#login-button {
+		color: var(--spotify-white);
+		background-color: var(--spotify-black);
+	}
+	#login-button:hover {
+		background-color: var(--spotify-green);
+	}
+`;
+
 export default function Login() {
 	return (
 		<>
-			<Container
-				id="login-container"
-				className="d-flex flex-column justify-content-center align-items-center"
-			>
-				<img
-					id="login-logo"
-					className="m-1"
-					alt="spotify logo"
-					src={spotifyIconBlack}
-					loading="lazy"
-				/>
-				<a
-					id="login-button"
-					className="btn btn-success btn-lg m-1"
-					href={AUTH_URL}
+			<StyledLogin>
+				<Container
+					id="login-container"
+					className="d-flex flex-column justify-content-center align-items-center"
 				>
-					Login with Spotify
-				</a>
-			</Container>
+					<img
+						id="login-logo"
+						className="m-1"
+						alt="spotify logo"
+						src={spotifyIconBlack}
+						loading="lazy"
+					/>
+					<a
+						id="login-button"
+						className="btn btn-success btn-lg m-1"
+						href={AUTH_URL}
+					>
+						Login with Spotify
+					</a>
+				</Container>
+			</StyledLogin>
 		</>
 	);
 }

@@ -4,12 +4,12 @@ import spotifyIconBlack from '../assets/Spotify_Icon_RGB_Black.png';
 
 // For a full list of Spotify data query parameters and values for our authorization URI ("Construct the authorization URI"): https://developer.spotify.com/documentation/general/guides/authorization-guide/
 
-// Make sure REDIRECT_URI matches what's on your Developer Dashboard ("Dashboard" -> "Edit Settings" -> "Redirect URIs") and env: https://developer.spotify.com/
+// Make sure REDIRECT_URI matches what's on your Developer Dashboard ("Dashboard" -> "Edit Settings" -> "Redirect URIs") and env: https://developer.spotify.com/. http://localhost:3000 or https://git.heroku.com/bg-spotify-clone-with-lyrics.git.
 
 const GET = 'https://accounts.spotify.com/authorize';
 const CLIENT_ID = '5082ad4ebe774438b665e8d896ba35bd';
 const RESPONSE_TYPE = 'code';
-const REDIRECT_URI = 'http://localhost:3000';
+const REDIRECT_URI = 'https://git.heroku.com/bg-spotify-clone-with-lyrics.git';
 const SCOPE =
 	'streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state';
 

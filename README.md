@@ -4,7 +4,7 @@ A minimalist Spotify clone that includes a lyric generator. Built with React, Bo
 
 ## Getting Started
 
-- [Heroku deployed link](https://git.heroku.com/bg-spotify-clone-with-lyrics.git) (running into 405; make sure Login and SFD are consistent)
+- [Heroku deployed link](https://git.heroku.com/bg-spotify-clone-with-lyrics.git) (deployed app forthcoming)
 - Frontend: "npm start"
 - Backend: CD into "server" folder, "npm run server"
 
@@ -25,6 +25,7 @@ A minimalist Spotify clone that includes a lyric generator. Built with React, Bo
 
 ## To Add (Icebox)
 
+- Fix 405 "Method Not Allowed" error with deployment; make sure Login, SFD, and dot are consistent.
 - Be able to play full albums instead of just one song at a time.
 - When no song is selected and you press play, customize error message (currently rendering "Cannot perform operation; no list was loaded").
 - When you select a song that has no lyrics, return "No Lyrics Found, Sad!" even before you press play.

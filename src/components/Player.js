@@ -22,19 +22,13 @@ export default function Player({ accessToken, trackUri }) {
 					play={play}
 					uris={trackUri ? [trackUri] : []}
 					magnifySliderOnHover
-					name={"Spotify Clone Player"}
+					name={'Spotify Clone Player'}
 					styles={{
-						// The track heart
 						activeColor: 'var(--spotify-green)',
-						// The player
 						bgColor: 'salmon',
-						// Affects the rewind, pause/play, forward, speaker, and volume icons
 						color: 'var(--spotify-black)',
-						// The bar that shows where we're at in the track
 						sliderColor: 'var(--spotify-green)',
-						// Artist font
 						trackArtistColor: 'var(--spotify-black)',
-						// Track font
 						trackNameColor: 'var(--spotify-black)',
 					}}
 				/>

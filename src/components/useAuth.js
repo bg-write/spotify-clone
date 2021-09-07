@@ -9,7 +9,7 @@ export default function useAuth(code) {
 	const [refreshToken, setRefreshToken] = useState();
 	const [expiresIn, setExpiresIn] = useState();
 
-	// Every time our code changes, make our API call to return our data.
+	// Every time our code changes, make our API call and set our data to our new info, and then we remove that info from our URL. If we get any errors, we redirect our users back to our Login root page.
 	useEffect(() => {
 		axios
 			.post(`${PORT}/login`, { code })
@@ -19,14 +19,13 @@ export default function useAuth(code) {
 				setExpiresIn(res.data.expiresIn);
 				window.history.pushState({}, null, '/');
 			})
-			.catch(() => {
-				window.location = '/';
-			})
 			.catch((err) => {
-				console.log('POST ERROR:', err);
+				console.log('API call ERROR:', err);
+				window.location = '/';
 			});
 	}, [code]);
 
+	// Enable our refresh token to automatically reload each hour (a minute before the refresh hour), so that our users don't get kicked off our app if they're on it for more than an hour at a time. Whenever our refreshToken or expiresIn changes, set off this useEffect.
 	useEffect(() => {
 		if (!refreshToken || !expiresIn) return;
 		const interval = setInterval(() => {
@@ -36,7 +35,8 @@ export default function useAuth(code) {
 					setAccessToken(res.data.accessToken);
 					setExpiresIn(res.data.expiresIn);
 				})
-				.catch(() => {
+				.catch((err) => {
+					console.log('Refresh ERROR:', err);
 					window.location = '/';
 				});
 		}, (expiresIn - 60) * 1000);
@@ -44,5 +44,6 @@ export default function useAuth(code) {
 		return () => clearInterval(interval);
 	}, [refreshToken, expiresIn]);
 
+	// This  accessToken allows us to do everything with Spotify's API!
 	return accessToken;
 }

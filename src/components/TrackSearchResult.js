@@ -1,28 +1,38 @@
 import React from 'react';
+import styled from 'styled-components';
 
 export default function TrackSearchResult({ track, chooseTrack }) {
 	function handlePlay() {
 		chooseTrack(track);
 	}
 
+	const StyledTrackSearchResult = styled.div`
+		#track-search-result {
+			cursor: pointer;
+		}
+		#track-album-img {
+			height: 64px;
+			width: 64px;
+		}
+	`;
+
 	return (
 		<>
-			<div
-				id="track-search-result"
-				className="d-flex m-2 align-items-center"
-				style={{ cursor: 'pointer' }}
-				onClick={handlePlay}
-			>
-				<img
-					alt="cover"
-					src={track.albumUrl}
-					style={{ height: '64px', width: '64px' }}
-				/>
-				<div className="ml-3">
-					<div>{track.title}</div>
-					<div className="text-muted">{track.artist}</div>
+			<StyledTrackSearchResult>
+				<div
+					id="track-search-result"
+					className="d-flex m-2 align-items-center"
+					onClick={handlePlay}
+				>
+					<img id="track-album-img" alt="cover" src={track.albumUrl} />
+					<div className="ml-3">
+						<div id="track-title">{track.title}</div>
+						<div id="track-artist" className="text-muted">
+							{track.artist}
+						</div>
+					</div>
 				</div>
-			</div>
+			</StyledTrackSearchResult>
 		</>
 	);
 }

@@ -10,6 +10,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Allows us to refresh our user sessions: https://github.com/thelinmichael/spotify-web-api-node ("Since the access token ...")
 app.post('/refresh', (req, res) => {
 	const refreshToken = req.body.refreshToken;
 	const spotifyApi = new SpotifyWebApi({
@@ -27,8 +28,8 @@ app.post('/refresh', (req, res) => {
 				expiresIn: data.body.expiresIn,
 			});
 		})
-		.catch(() => {
-			res.sendStatus(400);
+		.catch((err) => {
+			console.log('refreshAccessToken ERROR', err);
 		});
 });
 
@@ -51,11 +52,12 @@ app.post('/login', (req, res) => {
 				expiresIn: data.body.expires_in,
 			});
 		})
-		.catch(() => {
-			res.sendStatus(400);
+		.catch((err) => {
+			console.log('authorizationCodeGrant ERROR', err);
 		});
 });
 
+// Returns our song lyrics via lyricsFinder: https://www.npmjs.com/package/lyrics-finder
 app.get('/lyrics', async (req, res) => {
 	const lyrics =
 		(await lyricsFinder(req.query.artist, req.query.track)) ||
@@ -63,6 +65,7 @@ app.get('/lyrics', async (req, res) => {
 	res.json({ lyrics });
 });
 
+// Define our PORT, first with our own, and then 5000 as a backup default.
 const PORT = process.env.PORT || 5000;
 
 // For Heroku deployment

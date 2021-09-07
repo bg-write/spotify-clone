@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 import SpotifyPlayer from 'react-spotify-web-playback';
 
+// For further styling of SpotifyPlayer: https://www.npmjs.com/package/react-spotify-web-playback & https://github.com/gilbarbara/react-spotify-web-playback/blob/HEAD/src/types/common.ts#L44
+
 export default function Player({ accessToken, trackUri }) {
 	const [play, setPlay] = useState(false);
 
+	// Every time we change our trackUri, we want to play it.
 	useEffect(() => setPlay(true), [trackUri]);
 
 	if (!accessToken) return null;
-	// For further styling of the player: https://www.npmjs.com/package/react-spotify-web-playback & https://github.com/gilbarbara/react-spotify-web-playback/blob/HEAD/src/types/common.ts#L44
 	return (
 		<>
 			<div id="player">

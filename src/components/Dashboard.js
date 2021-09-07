@@ -13,7 +13,7 @@ const spotifyApi = new SpotifyWebApi({
 });
 const PORT = 'http://localhost:5000';
 
-// We pass in our "code" from App and useAuth.
+// We pass in our authorized "code" from useAuth.
 export default function Dashboard({ code }) {
 	const accessToken = useAuth(code);
 	const [search, setSearch] = useState('');
@@ -27,6 +27,7 @@ export default function Dashboard({ code }) {
 		setLyrics('');
 	}
 
+	// For whenever playingTrack updates and a song is currently playing, we want to return that song's lyrics.
 	useEffect(() => {
 		if (!playingTrack) return;
 
@@ -39,40 +40,52 @@ export default function Dashboard({ code }) {
 			})
 			.then((res) => {
 				setLyrics(res.data.lyrics);
+			})
+			.catch((err) => {
+				console.log('Lyrics ERROR', err);
 			});
 	}, [playingTrack]);
 
+	// Whenever our accessToken changes, we need to update our spotifyApi object.
 	useEffect(() => {
 		if (!accessToken) return;
 		spotifyApi.setAccessToken(accessToken);
 	}, [accessToken]);
 
+	// Whenever our search or accessToken changes, we need to update searchResults.
 	useEffect(() => {
 		if (!search) return setSearchResults([]);
 		if (!accessToken) return;
 
+		// Our Spotify search query!
 		let cancel = false;
-		spotifyApi.searchTracks(search).then((res) => {
-			if (cancel) return;
-			setSearchResults(
-				res.body.tracks.items.map((track) => {
-					const smallestAlbumImage = track.album.images.reduce(
-						(smallest, image) => {
-							if (image.height < smallest.height) return image;
-							return smallest;
-						},
-						track.album.images[0]
-					);
-
-					return {
-						artist: track.artists[0].name,
-						title: track.name,
-						uri: track.uri,
-						albumUrl: smallestAlbumImage.url,
-					};
-				})
-			);
-		});
+		spotifyApi
+			.searchTracks(search)
+			.then((res) => {
+				if (cancel) return;
+				setSearchResults(
+					res.body.tracks.items.map((track) => {
+						// Allows us to find our smallest img to return for each track.
+						const smallestAlbumImage = track.album.images.reduce(
+							(smallest, image) => {
+								if (image.height < smallest.height) return image;
+								return smallest;
+							},
+							track.album.images[0]
+						);
+						// For each track that we're mapping through in our search results ...
+						return {
+							artist: track.artists[0].name,
+							title: track.name,
+							uri: track.uri,
+							albumUrl: smallestAlbumImage.url,
+						};
+					})
+				);
+			})
+			.catch((err) => {
+				console.log('Search ERROR:', err);
+			});
 
 		return () => (cancel = true);
 	}, [search, accessToken]);
@@ -81,13 +94,15 @@ export default function Dashboard({ code }) {
 		<>
 			<Container id="dashboard-container" className="d-flex flex-column py-2">
 				<div id="dashboard-header">
-					<img
-						id="dashboard-logo"
-						className="m-3"
-						alt="spotify logo"
-						src={spotifyIconBlack}
-						loading="lazy"
-					/>
+					<a href="/">
+						<img
+							id="dashboard-logo"
+							className="m-3"
+							alt="spotify logo"
+							src={spotifyIconBlack}
+							loading="lazy"
+						/>
+					</a>
 				</div>
 				<Form.Control
 					id="dashboard-form"

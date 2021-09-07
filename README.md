@@ -4,7 +4,7 @@ A minimalist Spotify clone that includes a lyric generator. Built with React, Bo
 
 ## Getting Started
 
-- [Heroku deployed link](https://git.heroku.com/bg-spotify-clone-with-lyrics.git) (deployed app forthcoming)
+- [Heroku deployed link](https://bg-spotify-clone-with-lyrics.herokuapp.com/) (deployed app forthcoming)
 - Frontend: "npm start"
 - Backend: CD into "server" folder, "npm run server"
 

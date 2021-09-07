@@ -13,6 +13,7 @@ const spotifyApi = new SpotifyWebApi({
 });
 const PORT = 'http://localhost:5000';
 
+// We pass in our "code" from App and useAuth.
 export default function Dashboard({ code }) {
 	const accessToken = useAuth(code);
 	const [search, setSearch] = useState('');

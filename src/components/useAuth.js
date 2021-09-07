@@ -3,11 +3,13 @@ import axios from 'axios';
 
 const PORT = 'http://localhost:5000';
 
+// Pass in the code that we got from our user (access token, refresh token, and the time our info expires).
 export default function useAuth(code) {
 	const [accessToken, setAccessToken] = useState();
 	const [refreshToken, setRefreshToken] = useState();
 	const [expiresIn, setExpiresIn] = useState();
 
+	// Every time our code changes, make our API call to return our data.
 	useEffect(() => {
 		axios
 			.post(`${PORT}/login`, { code })
@@ -19,6 +21,9 @@ export default function useAuth(code) {
 			})
 			.catch(() => {
 				window.location = '/';
+			})
+			.catch((err) => {
+				console.log('POST ERROR:', err);
 			});
 	}, [code]);
 

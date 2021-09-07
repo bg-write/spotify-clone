@@ -62,11 +62,7 @@ export default function Login() {
 						src={spotifyIconBlack}
 						loading="lazy"
 					/>
-					<a
-						id="login-button"
-						className="btn btn-success btn-lg m-1"
-						href={AUTH_URL}
-					>
+					<a id="login-button" className="btn btn-lg m-1" href={AUTH_URL}>
 						Login with Spotify
 					</a>
 				</Container>

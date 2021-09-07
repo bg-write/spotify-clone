@@ -75,6 +75,6 @@ app.get('/*', function (req, res) {
 
 // Specify what PORT we're listening on.
 app.listen(PORT, (err) => {
-	if (err) return console.log(err);
+	if (err) return console.log('PORT ERROR', err);
 	console.log(`Express listening on port ${PORT}`);
 });

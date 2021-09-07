@@ -29,9 +29,7 @@ A minimalist Spotify clone that includes a lyric generator. Built with React, Bo
 - When no song is selected and you press play, customize error message (currently rendering "Cannot perform operation; no list was loaded").
 - When you select a song that has no lyrics, return "No Lyrics Found, Sad!" even before you press play.
 - Simplify Player styling and add more responsive features.
-- Redirect Dashboard logo to return to Login page.
 - Continue exploring the Spotify API to render more song information to the screen, or look into other APIs to pull info including linear notes, song credits, YouTube link, and other articles.
-- Update and flesh out all error catches.
 - Fix Styled Components error with Dashboard page (won't play nice with Player styling).
 
 ## Credits

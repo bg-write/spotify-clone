@@ -25,17 +25,17 @@ export default function Player({ accessToken, trackUri }) {
 					name={"Spotify Clone Player"}
 					styles={{
 						// The track heart
-						activeColor: '#1cb954',
+						activeColor: 'var(--spotify-green)',
 						// The player
 						bgColor: 'salmon',
 						// Affects the rewind, pause/play, forward, speaker, and volume icons
-						color: 'black',
+						color: 'var(--spotify-black)',
 						// The bar that shows where we're at in the track
-						sliderColor: '#1cb954',
+						sliderColor: 'var(--spotify-green)',
 						// Artist font
-						trackArtistColor: 'black',
+						trackArtistColor: 'var(--spotify-black)',
 						// Track font
-						trackNameColor: 'black',
+						trackNameColor: 'var(--spotify-black)',
 					}}
 				/>
 			</div>

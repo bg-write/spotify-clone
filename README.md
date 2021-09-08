@@ -4,7 +4,7 @@ A minimalist Spotify clone that includes a lyric generator. Built with React, Bo
 
 ## Getting Started
 
-- Frontend: CD into "client" folder, "npm start"
+- Frontend: "npm start"
 - Backend: CD into "server" folder, "npm run server"
 
 ## Tool, Technologies & NPM Packages

@@ -65,13 +65,18 @@ app.get('/lyrics', async (req, res) => {
 	res.json({ lyrics });
 });
 
-// Define our PORT, first with our own, and then 5000 as a backup default.
-const PORT = process.env.PORT || 5000;
-
 // For Heroku deployment
+app.get('/', function (req, res) {
+	res.send(JSON.stringify({ message: 'Hello, Server' }));
+});
+
 app.get('/*', function (req, res) {
+	console.log('Heroku server running!');
 	res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
+
+// Define our PORT, first with our own, and then 5000 as a backup default.
+const PORT = process.env.PORT || 5000;
 
 // Specify what PORT we're listening on.
 app.listen(PORT, (err) => {

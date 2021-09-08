@@ -66,9 +66,6 @@ app.get('/lyrics', async (req, res) => {
 });
 
 // For Heroku deployment
-app.get('/', function (req, res) {
-	res.send(JSON.stringify({ message: 'Hello, Server' }));
-});
 app.get('/*', function (req, res) {
 	console.log('Heroku server running!');
 	res.sendFile(path.join(__dirname, 'build', 'index.html'));

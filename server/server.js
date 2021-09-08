@@ -67,7 +67,7 @@ app.get('/lyrics', async (req, res) => {
 
 // For Heroku deployment
 app.get('/*', function (req, res) {
-	console.log('Heroku server running!');
+	console.log('Server running on Heroku');
 });
 
 // Define our PORT, first with our own, and then 5000 as a backup default.

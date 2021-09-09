@@ -11,6 +11,7 @@ const CLIENT_ID = '5082ad4ebe774438b665e8d896ba35bd';
 const spotifyApi = new SpotifyWebApi({
 	clientId: CLIENT_ID,
 });
+// UPDATE PORT BASED ON DEPLOYMENT.
 const PORT = 'http://localhost:5000';
 
 // We pass in our authorized "code" from useAuth.

@@ -6,15 +6,19 @@ const SpotifyWebApi = require('spotify-web-api-node');
 
 const app = express();
 const path = require('path');
+
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// UPDATE REDIRECT_URI BASED ON DEPLOYMENT.
+const REDIRECT_URI = 'http://localhost:3000';
 
 // Allows us to refresh our user sessions: https://github.com/thelinmichael/spotify-web-api-node ("Since the access token ...")
 app.post('/refresh', (req, res) => {
 	const refreshToken = req.body.refreshToken;
 	const spotifyApi = new SpotifyWebApi({
-		redirectUri: process.env.REDIRECT_URI,
+		redirectUri: REDIRECT_URI,
 		clientId: process.env.CLIENT_ID,
 		clientSecret: process.env.CLIENT_SECRET,
 		refreshToken,
@@ -38,7 +42,7 @@ app.post('/login', (req, res) => {
 	// The "code" returned as a query parameter to the redirect URI - create a variable so we can use it below.
 	const code = req.body.code;
 	const spotifyApi = new SpotifyWebApi({
-		redirectUri: process.env.REDIRECT_URI,
+		redirectUri: REDIRECT_URI,
 		clientId: process.env.CLIENT_ID,
 		clientSecret: process.env.CLIENT_SECRET,
 	});

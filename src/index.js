@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import App from './App';
+import NotFound from './components/NotFound';
 import './index.css';
 import { createGlobalStyle } from 'styled-components';
 
@@ -14,7 +16,12 @@ body {
 ReactDOM.render(
 	<React.StrictMode>
 		<GlobalStyle />
-		<App />
+		<Router>
+			<Switch>
+				<Route exact path="/" component={App} />
+				<Route path="*" component={NotFound} />
+			</Switch>
+		</Router>
 	</React.StrictMode>,
 	document.getElementById('root')
 );

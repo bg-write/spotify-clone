@@ -9,7 +9,7 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
 body {
 	background-image: url('https://media.giphy.com/media/KZFrf9JusXzmpnPsT6/giphy.gif');
-	font-family: sans-serif, Helvetica Neue, Helvetica, Arial;
+	font-family: Georgia, sans-serif, Helvetica Neue, Helvetica, Arial;
 }
 `;
 

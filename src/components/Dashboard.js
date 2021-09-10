@@ -31,7 +31,7 @@ export default function Dashboard({ code }) {
 	// For whenever playingTrack updates and a song is currently playing, we want to return that song's lyrics.
 	useEffect(() => {
 		if (!playingTrack) return;
-
+		console.log(playingTrack);
 		axios
 			.get(`${PORT}/lyrics`, {
 				params: {
@@ -94,7 +94,10 @@ export default function Dashboard({ code }) {
 	return (
 		<>
 			<Container id="dashboard-container" className="d-flex flex-column py-2">
-				<div id="dashboard-header">
+				<div
+					id="dashboard-header"
+					className="d-flex justify-content-between align-items-center"
+				>
 					<a href="/">
 						<img
 							id="dashboard-logo"
@@ -104,6 +107,31 @@ export default function Dashboard({ code }) {
 							loading="lazy"
 						/>
 					</a>
+					<div
+						id="dashboard-song"
+						className="d-flex flex-column align-items-center"
+					>
+						{playingTrack && (
+							<div id="dashboard-artist" className="fs-1">
+								<div>{playingTrack.artist}</div>
+							</div>
+						)}
+						{playingTrack && (
+							<div id="dashboard-title" className="fs-5">
+								<div>"{playingTrack.title}"</div>
+							</div>
+						)}
+					</div>
+					<div id="dashboard-image" className="d-flex align-items-center">
+						{playingTrack && (
+							<div
+								id="dashboard-artwork"
+								className="p-2 img-fluid img-thumbnail rounded"
+							>
+								<img src={playingTrack.albumUrl} alt="song art" />
+							</div>
+						)}
+					</div>
 				</div>
 				<Form.Control
 					id="dashboard-form"
@@ -126,6 +154,7 @@ export default function Dashboard({ code }) {
 						</div>
 					)}
 				</div>
+
 				<div id="dashboard-player">
 					<Player accessToken={accessToken} trackUri={playingTrack?.uri} />
 				</div>

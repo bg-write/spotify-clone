@@ -43,6 +43,9 @@
 #dashboard-lyrics {
 	white-space: pre;
 }
+/* #dashboard-info {
+	border: 3px solid var(--spotify-black);
+} */
 #dashboard-player {
 	border: 3px solid var(--spotify-black);
 }

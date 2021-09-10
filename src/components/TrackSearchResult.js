@@ -1,20 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const StyledTrackSearchResult = styled.div`
+	#track-search-result {
+		cursor: pointer;
+	}
+	#track-album-img {
+		height: 64px;
+		width: 64px;
+	}
+`;
+
 export default function TrackSearchResult({ track, chooseTrack }) {
 	function handlePlay() {
 		chooseTrack(track);
 	}
-
-	const StyledTrackSearchResult = styled.div`
-		#track-search-result {
-			cursor: pointer;
-		}
-		#track-album-img {
-			height: 64px;
-			width: 64px;
-		}
-	`;
 
 	return (
 		<>

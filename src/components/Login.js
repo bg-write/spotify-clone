@@ -45,6 +45,15 @@ const StyledLogin = styled.div`
 	#login-button:hover {
 		background-color: var(--spotify-green);
 	}
+	#login-credits {
+		text-align: center;
+	}
+	#credit-name {
+		color: var(--spotify-white);
+	}
+	#credit-name:hover {
+		background-color: var(--spotify-green);
+	}
 `;
 
 export default function Login() {
@@ -65,6 +74,15 @@ export default function Login() {
 					<a id="login-button" className="btn btn-lg m-1" href={AUTH_URL}>
 						Login with Spotify
 					</a>
+					<div id="login-credits" className="m-1 fixed-bottom">
+						<a
+							id="credit-name"
+							className="btn btn-sm m-1"
+							href="https://github.com/bg-write/spotify-clone"
+						>
+							Built by Brady Gerber
+						</a>
+					</div>
 				</Container>
 			</StyledLogin>
 		</>

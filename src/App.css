@@ -49,3 +49,9 @@
 #dashboard-player {
 	border: 3px solid var(--spotify-black);
 }
+#player img {
+	display: none;
+}
+#player div div:nth-child(2) div:nth-child(1) {
+	display: none;
+}

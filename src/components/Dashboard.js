@@ -109,7 +109,7 @@ export default function Dashboard({ code }) {
 					</a>
 					<div
 						id="dashboard-song"
-						className="d-flex flex-column align-items-center"
+						className="d-flex flex-column align-items-center m-3"
 					>
 						{playingTrack && (
 							<div id="dashboard-artist" className="fs-1">
@@ -117,12 +117,12 @@ export default function Dashboard({ code }) {
 							</div>
 						)}
 						{playingTrack && (
-							<div id="dashboard-title" className="fs-5">
+							<div id="dashboard-title" className="fs-5 text-center">
 								<div>"{playingTrack.title}"</div>
 							</div>
 						)}
 					</div>
-					<div id="dashboard-image" className="d-flex align-items-center">
+					<div id="dashboard-image" className="d-flex align-items-center m-3">
 						{playingTrack && (
 							<div
 								id="dashboard-artwork"

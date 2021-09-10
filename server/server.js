@@ -12,7 +12,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // UPDATE REDIRECT_URI BASED ON DEPLOYMENT.
-const REDIRECT_URI = 'http://localhost:3000';
+// http://localhost:3000
+// https://bg-spotify-clone-with-lyrics.herokuapp.com/
+const REDIRECT_URI = 'https://bg-spotify-clone-with-lyrics.herokuapp.com/';
 
 // Allows us to refresh our user sessions: https://github.com/thelinmichael/spotify-web-api-node ("Since the access token ...")
 app.post('/refresh', (req, res) => {

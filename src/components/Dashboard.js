@@ -124,11 +124,12 @@ export default function Dashboard({ code }) {
 					</div>
 					<div id="dashboard-image" className="d-flex align-items-center m-3">
 						{playingTrack && (
-							<div
-								id="dashboard-artwork"
-								className="p-2 img-fluid img-thumbnail rounded"
-							>
-								<img src={playingTrack.albumUrl} alt="song art" />
+							<div id="dashboard-artwork" className="img-thumbnail">
+								<img
+									src={playingTrack.albumUrl}
+									alt="song art"
+									className="rounded img-fluid border border-white border-5"
+								/>
 							</div>
 						)}
 					</div>
